@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82036C9C1BE85EDB0003F6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036C9B1BE85EDB0003F6C3 /* AppDelegate.swift */; };
+		82036C9E1BE85EDB0003F6C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036C9D1BE85EDB0003F6C3 /* ViewController.swift */; };
+		82036CA11BE85EDB0003F6C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82036C9F1BE85EDB0003F6C3 /* Main.storyboard */; };
+		82036CA31BE85EDB0003F6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82036CA21BE85EDB0003F6C3 /* Assets.xcassets */; };
+		82036CA61BE85EDB0003F6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82036CA41BE85EDB0003F6C3 /* LaunchScreen.storyboard */; };
+		82036CAE1BE85F750003F6C3 /* MBEMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036CAD1BE85F750003F6C3 /* MBEMetalView.swift */; };
+		82036CB01BE8619F0003F6C3 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 82036CAF1BE8619F0003F6C3 /* Shaders.metal */; };
+		82036CB21BE867910003F6C3 /* MBERenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036CB11BE867910003F6C3 /* MBERenderer.swift */; };
+		82036CB41BE869360003F6C3 /* MBEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036CB31BE869360003F6C3 /* MBEModel.swift */; };
+		82036CB61BE8743C0003F6C3 /* MBEMathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036CB51BE8743C0003F6C3 /* MBEMathUtilities.swift */; };
+		82AA16051C1CF4E700FED63F /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 82AA16041C1CF4E700FED63F /* License.rtf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		82036C981BE85EDB0003F6C3 /* DrawingIn3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingIn3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82036C9B1BE85EDB0003F6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		82036C9D1BE85EDB0003F6C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82036CA01BE85EDB0003F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82036CA21BE85EDB0003F6C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		82036CA51BE85EDB0003F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82036CA71BE85EDB0003F6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82036CAD1BE85F750003F6C3 /* MBEMetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBEMetalView.swift; sourceTree = "<group>"; };
+		82036CAF1BE8619F0003F6C3 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		82036CB11BE867910003F6C3 /* MBERenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBERenderer.swift; sourceTree = "<group>"; };
+		82036CB31BE869360003F6C3 /* MBEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBEModel.swift; sourceTree = "<group>"; };
+		82036CB51BE8743C0003F6C3 /* MBEMathUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBEMathUtilities.swift; sourceTree = "<group>"; };
+		82AA16041C1CF4E700FED63F /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82036C951BE85EDB0003F6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82036C8F1BE85EDB0003F6C3 = {
+			isa = PBXGroup;
+			children = (
+				82036C9A1BE85EDB0003F6C3 /* DrawingIn3D */,
+				82036C991BE85EDB0003F6C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82036C991BE85EDB0003F6C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82036C981BE85EDB0003F6C3 /* DrawingIn3D.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82036C9A1BE85EDB0003F6C3 /* DrawingIn3D */ = {
+			isa = PBXGroup;
+			children = (
+				82AA16041C1CF4E700FED63F /* License.rtf */,
+				82036C9B1BE85EDB0003F6C3 /* AppDelegate.swift */,
+				82036C9D1BE85EDB0003F6C3 /* ViewController.swift */,
+				82036CAD1BE85F750003F6C3 /* MBEMetalView.swift */,
+				82036CB11BE867910003F6C3 /* MBERenderer.swift */,
+				82036CB31BE869360003F6C3 /* MBEModel.swift */,
+				82036CB51BE8743C0003F6C3 /* MBEMathUtilities.swift */,
+				82036CAF1BE8619F0003F6C3 /* Shaders.metal */,
+				82036C9F1BE85EDB0003F6C3 /* Main.storyboard */,
+				82036CA21BE85EDB0003F6C3 /* Assets.xcassets */,
+				82036CA41BE85EDB0003F6C3 /* LaunchScreen.storyboard */,
+				82036CA71BE85EDB0003F6C3 /* Info.plist */,
+			);
+			path = DrawingIn3D;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82036C971BE85EDB0003F6C3 /* DrawingIn3D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82036CAA1BE85EDB0003F6C3 /* Build configuration list for PBXNativeTarget "DrawingIn3D" */;
+			buildPhases = (
+				82036C941BE85EDB0003F6C3 /* Sources */,
+				82036C951BE85EDB0003F6C3 /* Frameworks */,
+				82036C961BE85EDB0003F6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrawingIn3D;
+			productName = DrawingIn3D;
+			productReference = 82036C981BE85EDB0003F6C3 /* DrawingIn3D.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82036C901BE85EDB0003F6C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Caroline Begbie";
+				TargetAttributes = {
+					82036C971BE85EDB0003F6C3 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 82036C931BE85EDB0003F6C3 /* Build configuration list for PBXProject "DrawingIn3D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82036C8F1BE85EDB0003F6C3;
+			productRefGroup = 82036C991BE85EDB0003F6C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82036C971BE85EDB0003F6C3 /* DrawingIn3D */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82036C961BE85EDB0003F6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82AA16051C1CF4E700FED63F /* License.rtf in Resources */,
+				82036CA61BE85EDB0003F6C3 /* LaunchScreen.storyboard in Resources */,
+				82036CA31BE85EDB0003F6C3 /* Assets.xcassets in Resources */,
+				82036CA11BE85EDB0003F6C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82036C941BE85EDB0003F6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82036CB01BE8619F0003F6C3 /* Shaders.metal in Sources */,
+				82036C9E1BE85EDB0003F6C3 /* ViewController.swift in Sources */,
+				82036CB41BE869360003F6C3 /* MBEModel.swift in Sources */,
+				82036CAE1BE85F750003F6C3 /* MBEMetalView.swift in Sources */,
+				82036C9C1BE85EDB0003F6C3 /* AppDelegate.swift in Sources */,
+				82036CB61BE8743C0003F6C3 /* MBEMathUtilities.swift in Sources */,
+				82036CB21BE867910003F6C3 /* MBERenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		82036C9F1BE85EDB0003F6C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82036CA01BE85EDB0003F6C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82036CA41BE85EDB0003F6C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82036CA51BE85EDB0003F6C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82036CA81BE85EDB0003F6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		82036CA91BE85EDB0003F6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82036CAB1BE85EDB0003F6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DrawingIn3D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.DrawingIn3D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		82036CAC1BE85EDB0003F6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DrawingIn3D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.DrawingIn3D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82036C931BE85EDB0003F6C3 /* Build configuration list for PBXProject "DrawingIn3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82036CA81BE85EDB0003F6C3 /* Debug */,
+				82036CA91BE85EDB0003F6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82036CAA1BE85EDB0003F6C3 /* Build configuration list for PBXNativeTarget "DrawingIn3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82036CAB1BE85EDB0003F6C3 /* Debug */,
+				82036CAC1BE85EDB0003F6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82036C901BE85EDB0003F6C3 /* Project object */;
+}
