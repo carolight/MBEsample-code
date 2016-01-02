@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		828C4C8B1C376B3F009CF827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C4C8A1C376B3F009CF827 /* AppDelegate.swift */; };
+		828C4C8D1C376B3F009CF827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C4C8C1C376B3F009CF827 /* ViewController.swift */; };
+		828C4C901C376B3F009CF827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828C4C8E1C376B3F009CF827 /* Main.storyboard */; };
+		828C4C951C376B3F009CF827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828C4C931C376B3F009CF827 /* LaunchScreen.storyboard */; };
+		828C4C9D1C376B51009CF827 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 828C4C9C1C376B51009CF827 /* License.rtf */; };
+		828C4C9F1C376B6A009CF827 /* MBEMathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C4C9E1C376B6A009CF827 /* MBEMathUtilities.swift */; };
+		828C4CA11C376B73009CF827 /* MBERenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C4CA01C376B73009CF827 /* MBERenderer.swift */; };
+		828C4CA41C376B7D009CF827 /* MBEMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C4CA21C376B7D009CF827 /* MBEMesh.swift */; };
+		828C4CA51C376B7D009CF827 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 828C4CA31C376B7D009CF827 /* Shaders.metal */; };
+		828C4CB11C376C14009CF827 /* moo.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CA91C376C14009CF827 /* moo.aiff */; };
+		828C4CB21C376C14009CF827 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAA1C376C14009CF827 /* README.txt */; };
+		828C4CB31C376C14009CF827 /* spot.obj in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAB1C376C14009CF827 /* spot.obj */; };
+		828C4CB41C376C14009CF827 /* spot_control_mesh.obj in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAC1C376C14009CF827 /* spot_control_mesh.obj */; };
+		828C4CB51C376C14009CF827 /* spot_quadrangulated.obj in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAD1C376C14009CF827 /* spot_quadrangulated.obj */; };
+		828C4CB61C376C14009CF827 /* spot_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAE1C376C14009CF827 /* spot_texture.png */; };
+		828C4CB71C376C14009CF827 /* spot_texture.svg in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CAF1C376C14009CF827 /* spot_texture.svg */; };
+		828C4CB81C376C14009CF827 /* spot_triangulated.obj in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CB01C376C14009CF827 /* spot_triangulated.obj */; };
+		828C4CBB1C3799E8009CF827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828C4CBA1C3799E8009CF827 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		828C4C871C376B3F009CF827 /* Texturing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Texturing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		828C4C8A1C376B3F009CF827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		828C4C8C1C376B3F009CF827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		828C4C8F1C376B3F009CF827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		828C4C941C376B3F009CF827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		828C4C961C376B3F009CF827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		828C4C9C1C376B51009CF827 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+		828C4C9E1C376B6A009CF827 /* MBEMathUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBEMathUtilities.swift; sourceTree = "<group>"; };
+		828C4CA01C376B73009CF827 /* MBERenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBERenderer.swift; sourceTree = "<group>"; };
+		828C4CA21C376B7D009CF827 /* MBEMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBEMesh.swift; sourceTree = "<group>"; };
+		828C4CA31C376B7D009CF827 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		828C4CA91C376C14009CF827 /* moo.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = moo.aiff; sourceTree = "<group>"; };
+		828C4CAA1C376C14009CF827 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		828C4CAB1C376C14009CF827 /* spot.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spot.obj; sourceTree = "<group>"; };
+		828C4CAC1C376C14009CF827 /* spot_control_mesh.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spot_control_mesh.obj; sourceTree = "<group>"; };
+		828C4CAD1C376C14009CF827 /* spot_quadrangulated.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spot_quadrangulated.obj; sourceTree = "<group>"; };
+		828C4CAE1C376C14009CF827 /* spot_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spot_texture.png; sourceTree = "<group>"; };
+		828C4CAF1C376C14009CF827 /* spot_texture.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = spot_texture.svg; sourceTree = "<group>"; };
+		828C4CB01C376C14009CF827 /* spot_triangulated.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spot_triangulated.obj; sourceTree = "<group>"; };
+		828C4CBA1C3799E8009CF827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		828C4C841C376B3F009CF827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		828C4C7E1C376B3F009CF827 = {
+			isa = PBXGroup;
+			children = (
+				828C4C891C376B3F009CF827 /* Texturing */,
+				828C4C881C376B3F009CF827 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		828C4C881C376B3F009CF827 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				828C4C871C376B3F009CF827 /* Texturing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		828C4C891C376B3F009CF827 /* Texturing */ = {
+			isa = PBXGroup;
+			children = (
+				828C4C9C1C376B51009CF827 /* License.rtf */,
+				828C4CA61C376BB4009CF827 /* Utilities */,
+				828C4C8A1C376B3F009CF827 /* AppDelegate.swift */,
+				828C4C8C1C376B3F009CF827 /* ViewController.swift */,
+				828C4CA01C376B73009CF827 /* MBERenderer.swift */,
+				828C4CA21C376B7D009CF827 /* MBEMesh.swift */,
+				828C4CA81C376BD3009CF827 /* Storyboards */,
+				828C4CA71C376BC1009CF827 /* Resources */,
+				828C4C961C376B3F009CF827 /* Info.plist */,
+				828C4CBA1C3799E8009CF827 /* Assets.xcassets */,
+			);
+			path = Texturing;
+			sourceTree = "<group>";
+		};
+		828C4CA61C376BB4009CF827 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				828C4C9E1C376B6A009CF827 /* MBEMathUtilities.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		828C4CA71C376BC1009CF827 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				828C4CA31C376B7D009CF827 /* Shaders.metal */,
+				828C4CB91C376C1B009CF827 /* spot */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		828C4CA81C376BD3009CF827 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				828C4C8E1C376B3F009CF827 /* Main.storyboard */,
+				828C4C931C376B3F009CF827 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		828C4CB91C376C1B009CF827 /* spot */ = {
+			isa = PBXGroup;
+			children = (
+				828C4CA91C376C14009CF827 /* moo.aiff */,
+				828C4CAA1C376C14009CF827 /* README.txt */,
+				828C4CAB1C376C14009CF827 /* spot.obj */,
+				828C4CAC1C376C14009CF827 /* spot_control_mesh.obj */,
+				828C4CAD1C376C14009CF827 /* spot_quadrangulated.obj */,
+				828C4CAE1C376C14009CF827 /* spot_texture.png */,
+				828C4CAF1C376C14009CF827 /* spot_texture.svg */,
+				828C4CB01C376C14009CF827 /* spot_triangulated.obj */,
+			);
+			name = spot;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		828C4C861C376B3F009CF827 /* Texturing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828C4C991C376B3F009CF827 /* Build configuration list for PBXNativeTarget "Texturing" */;
+			buildPhases = (
+				828C4C831C376B3F009CF827 /* Sources */,
+				828C4C841C376B3F009CF827 /* Frameworks */,
+				828C4C851C376B3F009CF827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Texturing;
+			productName = Texturing;
+			productReference = 828C4C871C376B3F009CF827 /* Texturing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		828C4C7F1C376B3F009CF827 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Caroline Begbie";
+				TargetAttributes = {
+					828C4C861C376B3F009CF827 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 828C4C821C376B3F009CF827 /* Build configuration list for PBXProject "Texturing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 828C4C7E1C376B3F009CF827;
+			productRefGroup = 828C4C881C376B3F009CF827 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				828C4C861C376B3F009CF827 /* Texturing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		828C4C851C376B3F009CF827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828C4CB51C376C14009CF827 /* spot_quadrangulated.obj in Resources */,
+				828C4CB41C376C14009CF827 /* spot_control_mesh.obj in Resources */,
+				828C4CB31C376C14009CF827 /* spot.obj in Resources */,
+				828C4C9D1C376B51009CF827 /* License.rtf in Resources */,
+				828C4C951C376B3F009CF827 /* LaunchScreen.storyboard in Resources */,
+				828C4CB61C376C14009CF827 /* spot_texture.png in Resources */,
+				828C4CB11C376C14009CF827 /* moo.aiff in Resources */,
+				828C4CB81C376C14009CF827 /* spot_triangulated.obj in Resources */,
+				828C4CB21C376C14009CF827 /* README.txt in Resources */,
+				828C4C901C376B3F009CF827 /* Main.storyboard in Resources */,
+				828C4CBB1C3799E8009CF827 /* Assets.xcassets in Resources */,
+				828C4CB71C376C14009CF827 /* spot_texture.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		828C4C831C376B3F009CF827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828C4CA51C376B7D009CF827 /* Shaders.metal in Sources */,
+				828C4C9F1C376B6A009CF827 /* MBEMathUtilities.swift in Sources */,
+				828C4CA41C376B7D009CF827 /* MBEMesh.swift in Sources */,
+				828C4C8D1C376B3F009CF827 /* ViewController.swift in Sources */,
+				828C4C8B1C376B3F009CF827 /* AppDelegate.swift in Sources */,
+				828C4CA11C376B73009CF827 /* MBERenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		828C4C8E1C376B3F009CF827 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828C4C8F1C376B3F009CF827 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		828C4C931C376B3F009CF827 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828C4C941C376B3F009CF827 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		828C4C971C376B3F009CF827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		828C4C981C376B3F009CF827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		828C4C9A1C376B3F009CF827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Texturing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.Texturing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		828C4C9B1C376B3F009CF827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Texturing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.Texturing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		828C4C821C376B3F009CF827 /* Build configuration list for PBXProject "Texturing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828C4C971C376B3F009CF827 /* Debug */,
+				828C4C981C376B3F009CF827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828C4C991C376B3F009CF827 /* Build configuration list for PBXNativeTarget "Texturing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828C4C9A1C376B3F009CF827 /* Debug */,
+				828C4C9B1C376B3F009CF827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 828C4C7F1C376B3F009CF827 /* Project object */;
+}
