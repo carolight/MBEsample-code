@@ -22,10 +22,11 @@ class MBEMetalView: UIView {
     device = MTLCreateSystemDefaultDevice()
     super.init(coder: aDecoder)
     metalLayer.device = device
-    metalLayer.pixelFormat = .BGRA8Unorm
+    metalLayer.pixelFormat = .bgra8Unorm
+
   }
 
-  override class func layerClass() -> AnyClass {
+  override class var layerClass: AnyClass {
     return CAMetalLayer.self
   }
   
@@ -46,10 +47,10 @@ class MBEMetalView: UIView {
     // Setup render passes
     let passDescriptor = MTLRenderPassDescriptor()
     let colorAttachment = passDescriptor.colorAttachments[0]
-    colorAttachment.texture = texture
-    colorAttachment.loadAction = .Clear
-    colorAttachment.storeAction = .Store
-    colorAttachment.clearColor = MTLClearColor(red: 1, green: 0, blue: 0, alpha: 1)
+    colorAttachment?.texture = texture
+    colorAttachment?.loadAction = .clear
+    colorAttachment?.storeAction = .store
+    colorAttachment?.clearColor = MTLClearColor(red: 1, green: 0, blue: 0, alpha: 1)
     
     // Setup command queue
     let commandQueue = device?.newCommandQueue()
@@ -58,10 +59,10 @@ class MBEMetalView: UIView {
     let commandBuffer = commandQueue?.commandBuffer()
     
     // Setup command encoder
-    let commandEncoder = commandBuffer?.renderCommandEncoderWithDescriptor(passDescriptor)
+    let commandEncoder = commandBuffer?.renderCommandEncoder(with: passDescriptor)
     commandEncoder?.endEncoding()
     
-    commandBuffer?.presentDrawable(drawable)
+    commandBuffer?.present(drawable)
     commandBuffer?.commit()
   }
   

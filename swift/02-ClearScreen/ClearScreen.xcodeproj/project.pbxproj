@@ -102,6 +102,7 @@
 					826B569F1BE5D41E00FBAAF5 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 3E7TCD55JT;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -262,6 +263,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.ClearScreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -276,6 +279,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.carolinebegbie.ClearScreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
