@@ -44,21 +44,21 @@ class MBEMetalView: UIView {
   var currentRenderPassDescriptor: MTLRenderPassDescriptor {
     let passDescriptor = MTLRenderPassDescriptor()
     let colorAttachment = passDescriptor.colorAttachments[0]
-    colorAttachment.texture = currentDrawable?.texture
-    colorAttachment.clearColor = clearColor
-    colorAttachment.storeAction = .Store
-    colorAttachment.loadAction = .Clear
+    colorAttachment?.texture = currentDrawable?.texture
+    colorAttachment?.clearColor = clearColor
+    colorAttachment?.storeAction = .store
+    colorAttachment?.loadAction = .clear
     
     passDescriptor.depthAttachment.texture = depthTexture
     passDescriptor.depthAttachment.clearDepth = 1.0
-    passDescriptor.depthAttachment.storeAction = .DontCare
-    passDescriptor.depthAttachment.loadAction = .Clear
+    passDescriptor.depthAttachment.storeAction = .dontCare
+    passDescriptor.depthAttachment.loadAction = .clear
     return passDescriptor
   }
 
   /// The duration (in seconds) of the previous frame. This is valid only in the context
   /// of a callback to the delegate's drawInView() method.
-  var frameDuration: NSTimeInterval?
+  var frameDuration: TimeInterval?
 
   /// The color to which the color attachment should be cleared at the start of
   /// a rendering pass
@@ -68,16 +68,16 @@ class MBEMetalView: UIView {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     metalLayer.device = MTLCreateSystemDefaultDevice()
-    metalLayer.pixelFormat = .BGRA8Unorm
+    metalLayer.pixelFormat = .bgra8Unorm
   }
   
-  override class func layerClass() -> AnyClass {
+  override class var layerClass: AnyClass {
     return CAMetalLayer.self
   }
-
+  
   override func layoutSubviews() {
     super.layoutSubviews()
-    layer.contentsScale = UIScreen.mainScreen().scale
+    layer.contentsScale = UIScreen.main.scale
     let scale = layer.contentsScale
     metalLayer.drawableSize = CGSize(width: layer.bounds.width * scale, height: layer.bounds.height * scale)
     makeDepthTexture()
@@ -87,8 +87,8 @@ class MBEMetalView: UIView {
     super.didMoveToSuperview()
 
     if superview != nil {
-      displayLink = CADisplayLink(target: self, selector: "displayLinkDidFire:")
-      displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+      displayLink = CADisplayLink(target: self, selector: #selector(self.displayLinkDidFire))
+      displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
     } else {
       displayLink?.invalidate()
       displayLink = nil
@@ -99,20 +99,20 @@ class MBEMetalView: UIView {
     currentDrawable = metalLayer.nextDrawable()
     frameDuration = displayLink.duration;
 
-    delegate?.drawInView(self)
+    delegate?.drawInView(view: self)
   }
   
   private func makeDepthTexture() {
     let width = Int(metalLayer.drawableSize.width)
     let height = Int(metalLayer.drawableSize.height)
     guard let depthTexture = depthTexture else {
-      let textureDescriptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(.Depth32Float, width: width, height: height, mipmapped: false)
-      self.depthTexture = metalLayer.device?.newTextureWithDescriptor(textureDescriptor)
+      let textureDescriptor = MTLTextureDescriptor.texture2DDescriptor(with: .depth32Float, width: width, height: height, mipmapped: false)
+      self.depthTexture = metalLayer.device?.newTexture(with: textureDescriptor)
       return
     }
     if depthTexture.width != width || depthTexture.height != height {
-      let textureDescriptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(.Depth32Float, width: width, height: height, mipmapped: false)
-      self.depthTexture = metalLayer.device?.newTextureWithDescriptor(textureDescriptor)
+      let textureDescriptor = MTLTextureDescriptor.texture2DDescriptor(with: .depth32Float, width: width, height: height, mipmapped: false)
+      self.depthTexture = metalLayer.device?.newTexture(with: textureDescriptor)
     }
   }
 }

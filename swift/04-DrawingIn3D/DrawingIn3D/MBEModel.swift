@@ -15,7 +15,7 @@ struct MBEVertex {
 }
 
 typealias MBEIndex = UInt16
-let MBEIndexType:MTLIndexType = .UInt16
+let MBEIndexType:MTLIndexType = .uInt16
 
 struct MBEUniforms {
   var modelViewProjectionMatrix: matrix_float4x4
