@@ -40,62 +40,62 @@ class MBERenderer: NSObject {
   }
   
   private func makeUniformBuffer() {
-    uniformBuffer = device?.newBufferWithLength(sizeof(MBEUniforms), options: .CPUCacheModeDefaultCache)
+    uniformBuffer = device?.newBuffer(withLength: sizeof(MBEUniforms.self), options: [])
     uniformBuffer?.label = "Uniforms"
   }
   
   private func makeSamplerState() {
     // create sampler state
     let descriptor = MTLSamplerDescriptor()
-    descriptor.sAddressMode = .ClampToEdge
-    descriptor.tAddressMode = .ClampToEdge
-    descriptor.minFilter = .Nearest
-    descriptor.magFilter = .Linear
-    descriptor.mipFilter = .Linear
-    samplerState = device?.newSamplerStateWithDescriptor(descriptor)
+    descriptor.sAddressMode = .clampToEdge
+    descriptor.tAddressMode = .clampToEdge
+    descriptor.minFilter = .nearest
+    descriptor.magFilter = .linear
+    descriptor.mipFilter = .linear
+    samplerState = device?.newSamplerState(with: descriptor)
   }
   
   private func makePipeline() {
     let library = device?.newDefaultLibrary()
-    let vertexFunc = library?.newFunctionWithName("vertex_project")
-    let fragmentFunc = library?.newFunctionWithName("fragment_light")
+    let vertexFunc = library?.newFunction(withName: "vertex_project")
+    let fragmentFunc = library?.newFunction(withName: "fragment_light")
     
     let pipelineDescriptor = MTLRenderPipelineDescriptor()
     pipelineDescriptor.vertexFunction = vertexFunc
     pipelineDescriptor.fragmentFunction = fragmentFunc
-    pipelineDescriptor.colorAttachments[0].pixelFormat = .BGRA8Unorm
-    pipelineDescriptor.depthAttachmentPixelFormat = .Depth32Float
-    pipelineDescriptor.depthAttachmentPixelFormat = .Invalid
+    pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+    pipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+    pipelineDescriptor.depthAttachmentPixelFormat = .invalid
     
     let depthStencilDescriptor = MTLDepthStencilDescriptor()
-    depthStencilDescriptor.depthCompareFunction = .Less
-    depthStencilDescriptor.depthWriteEnabled = true
-    depthStencilState = device?.newDepthStencilStateWithDescriptor(depthStencilDescriptor)
+    depthStencilDescriptor.depthCompareFunction = .less
+    depthStencilDescriptor.isDepthWriteEnabled = true
+    depthStencilState = device?.newDepthStencilState(with: depthStencilDescriptor)
     
     
     do {
-      pipeline = try device?.newRenderPipelineStateWithDescriptor(pipelineDescriptor)
+      pipeline = try device?.newRenderPipelineState(with: pipelineDescriptor)
     } catch let error as NSError {
       print("Error creating render pipeline state: \(error)")
     }
     commandQueue = device?.newCommandQueue()
   }
   
-  private func loadModel(modelName:String) {
+  private func loadModel(_ modelName:String) {
     assert(device != nil, "No device available")
     guard let device = device else {
       return
     }
-    guard let assetURL = NSBundle.mainBundle().URLForResource(modelName, withExtension: "obj") else {
+    guard let assetURL = Bundle.main.url(forResource: modelName, withExtension: "obj") else {
       print("Asset \(modelName) does not exist.")
       return
     }
     
     // Load texture
     let textureLoader = MTKTextureLoader(device: device)
-    if let textureURL = NSBundle.mainBundle().URLForResource("spot_texture", withExtension: "png") {
+    if let textureURL = Bundle.main.url(forResource: "spot_texture", withExtension: "png") {
       do {
-        diffuseTexture = try textureLoader.newTextureWithContentsOfURL(textureURL, options: nil)
+        diffuseTexture = try textureLoader.newTexture(withContentsOf: textureURL, options: nil)
       } catch {
         print("texture not created")
       }
@@ -114,23 +114,23 @@ class MBERenderer: NSObject {
     let mtlVertexDescriptor = MTLVertexDescriptor()
     
     // Positions
-    mtlVertexDescriptor.attributes[0].format = .Float4
+    mtlVertexDescriptor.attributes[0].format = .float4
     mtlVertexDescriptor.attributes[0].offset = 0
     mtlVertexDescriptor.attributes[0].bufferIndex = 0
     
     // Normals
-    mtlVertexDescriptor.attributes[1].format = .Float4
+    mtlVertexDescriptor.attributes[1].format = .float4
     mtlVertexDescriptor.attributes[1].offset = 16
     mtlVertexDescriptor.attributes[1].bufferIndex = 0
     
     // Texture
-    mtlVertexDescriptor.attributes[2].format = .Float2
+    mtlVertexDescriptor.attributes[2].format = .float2
     mtlVertexDescriptor.attributes[2].offset = 32
     mtlVertexDescriptor.attributes[2].bufferIndex = 0
     
     mtlVertexDescriptor.layouts[0].stride = 40
     mtlVertexDescriptor.layouts[0].stepRate = 1
-    mtlVertexDescriptor.layouts[0].stepFunction = .PerVertex
+    mtlVertexDescriptor.layouts[0].stepFunction = .perVertex
     
     /*
     Create a Model I/O vertex descriptor. This specifies the layout
@@ -159,13 +159,13 @@ class MBERenderer: NSObject {
     into Metal GPU memory.
     */
     
-    let asset = MDLAsset(URL: assetURL, vertexDescriptor: mdlVertexDescriptor, bufferAllocator: bufferAllocator)
+    let asset = MDLAsset(url: assetURL, vertexDescriptor: mdlVertexDescriptor, bufferAllocator: bufferAllocator)
     
     let mtkMeshes:[MTKMesh]?
     var mdlMeshes:NSArray?
     
     do {
-      mtkMeshes = try MTKMesh.newMeshesFromAsset(asset, device: device, sourceMeshes: &mdlMeshes)
+      mtkMeshes = try MTKMesh.newMeshes(from: asset, device: device, sourceMeshes: &mdlMeshes)
     } catch {
       print("error creating mesh")
       return
@@ -176,7 +176,7 @@ class MBERenderer: NSObject {
     {
       meshes = []
       
-      for (index, mtkMesh) in mtkMeshes.enumerate() {
+      for (index, mtkMesh) in mtkMeshes.enumerated() {
         let mesh = MBEMesh(mesh: mtkMesh, mdlMesh: mdlMeshes[index], device: device)
         meshes.append(mesh)
       }
@@ -186,7 +186,7 @@ class MBERenderer: NSObject {
 
 extension MBERenderer: MTKViewDelegate {
   
-  private func updateUniformsForView(view: MTKView, duration: NSTimeInterval) {
+  private func updateUniformsForView(_ view: MTKView, duration: TimeInterval) {
     guard let uniformBuffer = uniformBuffer else {
       print("uniformBuffer not created")
       return
@@ -214,14 +214,14 @@ extension MBERenderer: MTKViewDelegate {
     
     // update uniform data with current viewing and model matrices
     let uniformPointer = UnsafeMutablePointer<MBEUniforms>(uniformBuffer.contents())
-    var uniformData = uniformPointer.memory
+    var uniformData = uniformPointer.pointee
     uniformData.modelViewMatrix = matrix_multiply(viewMatrix, modelMatrix);
     uniformData.modelViewProjectionMatrix = matrix_multiply(projectionMatrix, uniformData.modelViewMatrix);
     uniformData.normalMatrix = matrix_float4x4_extract_linear(uniformData.modelViewMatrix);
-    uniformPointer.memory = uniformData
+    uniformPointer.pointee = uniformData
   }
   
-  func drawInMTKView(view: MTKView) {
+  func draw(in view: MTKView) {
     guard let drawable = view.currentDrawable else {
       print("drawable not set")
       return
@@ -237,7 +237,7 @@ extension MBERenderer: MTKViewDelegate {
     
     view.clearColor = MTLClearColor(red: 0.85, green: 0.85, blue: 085, alpha: 1)
     
-    let frameDuration:NSTimeInterval = 0.02
+    let frameDuration:TimeInterval = 0.02
     updateUniformsForView(view, duration: frameDuration)
     
     // Setup render passes - do calculations before allocating this
@@ -247,26 +247,26 @@ extension MBERenderer: MTKViewDelegate {
     }
     
     // Start render pass
-    let commandEncoder = commandBuffer.renderCommandEncoderWithDescriptor(descriptor)
+    let commandEncoder = commandBuffer.renderCommandEncoder(with: descriptor)
     commandEncoder.setRenderPipelineState(pipeline)
     commandEncoder.setDepthStencilState(depthStencilState)
-    commandEncoder.setFrontFacingWinding(.CounterClockwise)
-    commandEncoder.setCullMode(.Back)
+    commandEncoder.setFrontFacing(.counterClockwise)
+    commandEncoder.setCullMode(.back)
     
     // Set up uniform buffer
-    commandEncoder.setVertexBuffer(uniformBuffer, offset: 0, atIndex: 1)
-    commandEncoder.setFragmentTexture(diffuseTexture, atIndex: 0)
-    commandEncoder.setFragmentSamplerState(samplerState, atIndex: 0)
+    commandEncoder.setVertexBuffer(uniformBuffer, offset: 0, at: 1)
+    commandEncoder.setFragmentTexture(diffuseTexture, at: 0)
+    commandEncoder.setFragmentSamplerState(samplerState, at: 0)
     
     for mesh in meshes {
       mesh.renderWithEncoder(commandEncoder)
     }
     commandEncoder.endEncoding()
-    commandBuffer.presentDrawable(drawable)
+    commandBuffer.present(drawable)
     commandBuffer.commit()
   }
   
-  func mtkView(view: MTKView, drawableSizeWillChange size: CGSize) {
+  func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
   }
   
 }

@@ -10,7 +10,7 @@ import simd
 
 let π = Float(M_PI)
 
-func matrix_float4x4_translation(t: float3) -> matrix_float4x4 {
+func matrix_float4x4_translation(_ t: float3) -> matrix_float4x4 {
   let X = vector_float4(1, 0, 0, 0)
   let Y = vector_float4(0, 1, 0, 0)
   let Z = vector_float4(0, 0, 1, 0)
@@ -19,7 +19,7 @@ func matrix_float4x4_translation(t: float3) -> matrix_float4x4 {
   return matrix_float4x4(columns:(X, Y, Z, W))
 }
 
-func matrix_float4x4_uniform_scale(scale: Float) -> matrix_float4x4 {
+func matrix_float4x4_uniform_scale(_ scale: Float) -> matrix_float4x4 {
   let X = vector_float4(scale, 0, 0, 0)
   let Y = vector_float4(0, scale, 0, 0)
   let Z = vector_float4(0, 0, scale, 0)
@@ -27,7 +27,7 @@ func matrix_float4x4_uniform_scale(scale: Float) -> matrix_float4x4 {
   return matrix_float4x4(columns:(X, Y, Z, W))
 }
 
-func matrix_float4x4_rotation(axis: vector_float3, angle: Float) -> matrix_float4x4 {
+func matrix_float4x4_rotation(_ axis: vector_float3, angle: Float) -> matrix_float4x4 {
   let c = cos(angle)
   let s = sin(angle)
   
@@ -54,7 +54,7 @@ func matrix_float4x4_rotation(axis: vector_float3, angle: Float) -> matrix_float
   return matrix_float4x4(columns:(X, Y, Z, W))
 }
 
-func matrix_float4x4_perspective(aspect: Float, fovy: Float, near: Float, far: Float) -> matrix_float4x4 {
+func matrix_float4x4_perspective(_ aspect: Float, fovy: Float, near: Float, far: Float) -> matrix_float4x4 {
   
   let yScale = 1 / tan(fovy * 0.5)
   let xScale = yScale / aspect
@@ -71,7 +71,7 @@ func matrix_float4x4_perspective(aspect: Float, fovy: Float, near: Float, far: F
 
 }
 
-func matrix_float4x4_extract_linear(m:matrix_float4x4) -> matrix_float3x3 {
+func matrix_float4x4_extract_linear(_ m:matrix_float4x4) -> matrix_float3x3 {
   let x = vector_float3(m.columns.0.x, m.columns.0.y, m.columns.0.z)
   let y = vector_float3(m.columns.1.x, m.columns.1.y, m.columns.1.z)
   let z = vector_float3(m.columns.2.x, m.columns.2.y, m.columns.2.z)

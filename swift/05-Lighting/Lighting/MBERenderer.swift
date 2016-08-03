@@ -71,7 +71,7 @@ class MBERenderer: NSObject {
     guard let device = device else {
       return
     }
-    guard let assetURL = Bundle.main.urlForResource(modelName, withExtension: "obj") else {
+    guard let assetURL = Bundle.main.url(forResource: modelName, withExtension: "obj") else {
       print("Asset \(modelName) does not exist.")
       return
     }

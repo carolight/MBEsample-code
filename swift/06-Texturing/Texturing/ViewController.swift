@@ -34,17 +34,18 @@ class ViewController: UIViewController {
     renderer = MBERenderer(device: metalView.device)
     metalView.delegate = self
     
-    let panGesture = UIPanGestureRecognizer.init(target: self, action: "gestureDidRecognize:")
+    let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(ViewController.gestureDidRecognize(_:)))
     metalView.addGestureRecognizer(panGesture)
     loadResources()
   }
 
-  override func prefersStatusBarHidden() -> Bool {
+  override var prefersStatusBarHidden: Bool {
     return true
   }
   
+  
   private func loadResources() {
-    if let mooURL = NSBundle.mainBundle().URLForResource("moo", withExtension: "aiff") {
+    if let mooURL = Bundle.main.url(forResource: "moo", withExtension: "aiff") {
       let result = AudioServicesCreateSystemSoundID(mooURL, &mooSound)
       if result != noErr {
         print("Error when loading sound effect. Error code: \(result)")
@@ -54,8 +55,8 @@ class ViewController: UIViewController {
     }
   }
   
-  func gestureDidRecognize(gesture: UIPanGestureRecognizer) {
-    let velocity = gesture.velocityInView(view)
+  func gestureDidRecognize(_ gesture: UIPanGestureRecognizer) {
+    let velocity = gesture.velocity(in: view)
     angularVelocity = CGPoint(x:velocity.x * kVelocityScale,
                               y:velocity.y * kVelocityScale)
   }
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
 
 extension ViewController: MTKViewDelegate {
   
-  private func updateMotionWithTimestep(duration:CGFloat) {
+  private func updateMotionWithTimestep(_ duration:CGFloat) {
     if duration > 0 {
       // Update the rotation angles according to the current velocity and time step
       
@@ -85,16 +86,16 @@ extension ViewController: MTKViewDelegate {
     }
   }
 
-  func drawInMTKView(view: MTKView) {
+  func draw(in view: MTKView) {
     updateMotionWithTimestep(1.0 / CGFloat(view.preferredFramesPerSecond))
     
     renderer?.rotationX = Float(-angle.y)
     renderer?.rotationY = Float(-angle.x)
-    renderer?.drawInMTKView(metalView)
+    renderer?.draw(in: view)
     
   }
   
-  func mtkView(view: MTKView, drawableSizeWillChange size: CGSize) {
+  func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
   }
   
 }
