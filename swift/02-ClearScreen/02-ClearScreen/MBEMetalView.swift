@@ -19,6 +19,7 @@ class MBEMetalView: MTKView {
     super.init(coder: coder)
     device = MTLCreateSystemDefaultDevice()
     colorPixelFormat = .bgra8Unorm
+    clearColor = MTLClearColor(red: 1, green: 0, blue: 0, alpha: 1)
   }
   
   override func didMoveToWindow() {
@@ -26,18 +27,12 @@ class MBEMetalView: MTKView {
   }
   
   private func redraw() {
-    guard let drawable = currentDrawable else { return }
-    
-    let passDescriptor = MTLRenderPassDescriptor()
-    passDescriptor.colorAttachments[0].texture = drawable.texture
-    passDescriptor.colorAttachments[0].loadAction = .clear
-    passDescriptor.colorAttachments[0].storeAction = .store
-    passDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1, green: 0, blue: 0, alpha: 1)
+    guard let drawable = currentDrawable,
+    let renderPassDescriptor = currentRenderPassDescriptor else { return }
     
     let commandQueue = device?.makeCommandQueue()
     let commandBuffer = commandQueue?.makeCommandBuffer()
-    
-    let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
+    let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
     commandEncoder?.endEncoding()
     
     commandBuffer?.present(drawable)
