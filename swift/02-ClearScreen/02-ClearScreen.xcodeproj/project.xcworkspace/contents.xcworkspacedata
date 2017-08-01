@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ClearScreen.xcodeproj">
+      location = "self:02-ClearScreen.xcodeproj">
    </FileRef>
 </Workspace>
